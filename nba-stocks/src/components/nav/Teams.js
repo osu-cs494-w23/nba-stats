@@ -1,16 +1,18 @@
 import React from "react";
 import { axiosInstance } from "../../axiosInstance";
+import axios from 'axios';
 
 export default function Teams() {
-  const getTeams = async (page) => {
-    // Axios request that gets data based on the page of results.
-    window.scrollTo(0, 0);
-    await axiosInstance
-      .get(`https://www.balldontlie.io/api/v1/teams`)
-      .then((res) => {
-        console.log(res.data)
-      });
-  };
+  axios.get('https://www.balldontlie.io/api/v1/teams')
+  .then(response => {
+      // Handle response
+      console.log(response.data);
+  })
+  .catch(err => {
+      // Handle errors
+      console.error(err);
+  });
+
     return (
       <section
         className="flex flex-col justify-center items-center pb-4 "

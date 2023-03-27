@@ -67,7 +67,7 @@ export default function PlayerSelector() {
             player.stats = res.data;
           }
 
-          player.season = 2021;
+          player.season = 2022;
           addToPlayerList(player);
         });
     }
