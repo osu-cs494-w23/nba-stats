@@ -1,6 +1,8 @@
 import React from "react";
 import { axiosInstance } from "../../axiosInstance";
 import axios from 'axios';
+import { v4 as uuidv4 } from "uuid";
+import { render } from "@testing-library/react";
 
 export default function Teams() {
   axios.get('https://www.balldontlie.io/api/v1/teams')
@@ -13,6 +15,16 @@ export default function Teams() {
       console.error(err);
   });
 
+  const getTeams = async ()=> {
+    let emptyStats = {
+      data: [
+        {
+          full_name: ""
+        },
+      ],
+    }
+  }
+    
     return (
       <section
         className="flex flex-col justify-center items-center pb-4 "
@@ -55,3 +67,4 @@ export default function Teams() {
       </section>
     );
   }
+
